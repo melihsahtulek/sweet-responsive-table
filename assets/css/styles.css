@@ -1,0 +1,179 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap");
+
+:root {
+  --gray: rgba(236, 240, 241, 1);
+  --white: rgba(255, 255, 255, 1);
+  --black: rgba(38, 38, 38, 1);
+  --yellow: rgba(247, 202, 24, 1);
+  --green: rgba(0, 149, 149, 1);
+  --p-1: 1rem;
+  --p-2: 2rem;
+}
+
+html {
+  font-family: "Poppins", sans-serif;
+  color: var(--black);
+  height: 100%;
+  font-size: 16px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+  border: 0;
+  outline: 0;
+  color: inherit;
+}
+
+.tableContainer {
+  padding: var(--p-2);
+  width: 1124px;
+}
+
+.infoTbl {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.infoTbl tr,
+th {
+  border: 1px solid var(--gray);
+}
+
+.infoTbl tr th {
+  padding: 5px;
+}
+
+.infoTbl tr th .subTitle {
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.infoTbl tr td {
+  padding: 5px;
+  text-align: center;
+  font-weight: 500;
+  word-wrap: break-word;
+}
+
+.infoTbl tr th:not(:first-of-type) {
+  width: calc(100% / 8);
+}
+
+.infoTbl tbody tr:nth-of-type(2n + 2) {
+  background-color: var(--gray);
+}
+
+@media (max-width: 1124px) {
+  .tableContainer {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .infoTbl {
+    margin-left: -10px;
+  }
+
+  .infoTbl thead {
+    display: none;
+  }
+
+  .infoTbl tbody {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .infoTbl tbody tr {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    width: calc(50% - 10px);
+    margin-left: 10px;
+  }
+
+  .infoTbl tr {
+    border-radius: 5px !important;
+    overflow: hidden !important;
+  }
+
+  .infoTbl tr td {
+    border: 1px solid var(--gray);
+  }
+
+  .infoTbl tbody tr td {
+    padding: 5px 10px !important;
+    text-align: right !important;
+    position: relative;
+  }
+
+  .infoTbl tbody tr td:before {
+    position: absolute;
+    left: 5px;
+    content: "";
+    width: 100px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left;
+  }
+
+  .infoTbl tbody tr td:nth-of-type(3):before {
+    background-image: url("../../assets/images/memory.png");
+  }
+
+  .infoTbl tbody tr td:nth-of-type(4):before {
+    background-image: url("../../assets/images/networking.png");
+  }
+
+  .infoTbl tbody tr td:nth-of-type(5):before {
+    background-image: url("../../assets/images/operating.png");
+  }
+
+  .infoTbl tbody tr td:nth-of-type(6):before {
+    background-image: url("../../assets/images/price.png");
+  }
+
+  .infoTbl tbody tr td:nth-of-type(7):before {
+    background-image: url("../../assets/images/processor.png");
+  }
+
+  .infoTbl tbody tr td:nth-of-type(8):before {
+    background-image: url("../../assets/images/ssd.png");
+  }
+
+  .infoTbl tbody tr td:nth-of-type(9):before {
+    background-image: url("../../assets/images/location.png");
+  }
+
+  .infoTbl tbody tr:nth-of-type(2n + 2) {
+    background-color: transparent;
+  }
+}
+
+@media (max-width: 768px) {
+  .infoTbl {
+    margin-left: 0;
+  }
+
+  .infoTbl tbody tr {
+    width: 100%;
+    margin-left: 0;
+  }
+}
